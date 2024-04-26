@@ -30,7 +30,14 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  //برای برسی و امتیاز دادن به  جواب های سوالات
   List<Icon> scoreList = [];
+  //سوالاتی که در صفحه نمیایش داده میشوند
+  List<String> question = [
+    'You can lead a cow down stairs but not up stairs.',
+    'Approximately one quarter of human bones are in the feet.',
+    'A slug\'s blood is green.'
+  ];
 
   @override
   Widget build(BuildContext context) {
