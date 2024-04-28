@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizzler/questhion.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,11 +34,17 @@ class _QuizPageState extends State<QuizPage> {
   //برای برسی و امتیاز دادن به  جواب های سوالات
   List<Icon> scoreList = [];
   //سوالاتی که در صفحه نمیایش داده میشوند
-  List<String> question = [
-    'You can lead a cow down stairs but not up stairs.',
-    'Approximately one quarter of human bones are in the feet.',
-    'A slug\'s blood is green.'
-  ];
+  // List<String> question = [
+  //   'You can lead a cow down stairs but not up stairs.',
+  //   'Approximately one quarter of human bones are in the feet.',
+  //   'A slug\'s blood is green.'
+  // ];
+// ساخت نمونه از کلاسی که برای سوال  ها و جواب های اون ایجاد شده
+  Questhion q1 = Questhion(
+      q: 'You can lead a cow down stairs but not up stairs.', a: false);
+  Questhion q2 = Questhion(
+      q: 'Approximately one quarter of human bones are in the feet.', a: true);
+  Questhion q3 = Questhion(q: 'A slug\'s blood is green.', a: true);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +58,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go.',
+                question[0],
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
