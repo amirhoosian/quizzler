@@ -39,12 +39,15 @@ class _QuizPageState extends State<QuizPage> {
   //   'Approximately one quarter of human bones are in the feet.',
   //   'A slug\'s blood is green.'
   // ];
-// ساخت نمونه از کلاسی که برای سوال  ها و جواب های اون ایجاد شده
-  Questhion q1 = Questhion(
-      q: 'You can lead a cow down stairs but not up stairs.', a: false);
-  Questhion q2 = Questhion(
-      q: 'Approximately one quarter of human bones are in the feet.', a: true);
-  Questhion q3 = Questhion(q: 'A slug\'s blood is green.', a: true);
+
+//ساخت لیستی از ابجکت سوال و جواب
+  List<Questhion> QuesthionBank = [
+    Questhion(q: 'You can lead a cow down stairs but not up stairs.', a: false),
+    Questhion(
+        q: 'Approximately one quarter of human bones are in the feet.',
+        a: true),
+    Questhion(q: 'A slug\'s blood is green.', a: true)
+  ];
 
   @override
   Widget build(BuildContext context) {
