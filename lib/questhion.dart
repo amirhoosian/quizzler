@@ -1,5 +1,4 @@
-import 'package:flutter/foundation.dart';
-
+// این یه ابجکت برای ساخت سوال هاست
 class Questhion {
   late String questhion;
   late bool awnser;
