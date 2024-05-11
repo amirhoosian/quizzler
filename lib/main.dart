@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'quiz_brain.dart';
+import 'questhion.dart';
 
 QuizBrain quizBrain = QuizBrain();
+Questhion questhion = Questhion();
 void main() {
   runApp(const MyApp());
 }
@@ -41,6 +43,20 @@ class _QuizPageState extends State<QuizPage> {
   //   'A slug\'s blood is green.'
   // ];
   int quizNumber = 0;
+
+  void checkAnswe(bool userPick) {
+    bool correctanswer = quizBrain.QuesthionBank[quizNumber].awnser;
+    if (correctanswer == userPick) {
+      scoreList.add(Icon(Icons.check, color: Colors.green));
+    } else {
+      scoreList.add(Icon(Icons.close, color: Colors.red));
+    }
+
+    setState(() {
+      quizNumber++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -79,6 +95,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
+                checkAnswe(true);
               },
             ),
           ),
@@ -97,6 +114,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
+                checkAnswe(false);
               },
             ),
           ),
